@@ -13,4 +13,16 @@ router.get("/", async (request, response) => {
     }
 });
 
+// POST http://localhost:3000/api/books
+router.post("/", async (request, response) => {
+    try {
+        const book = new Book(request.body);
+        console.log(book);
+        const addedBook = await booksLogic.addBookAsync(book);
+        response.status(201).json(addedBook);
+    }
+    catch (err) {
+        response.status(500).send(err.message);
+    }
+});
 module.exports = router;

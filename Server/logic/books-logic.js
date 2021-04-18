@@ -5,14 +5,14 @@ dal.connectAsync()
     .then(db => console.log("We're connected to  books on mongodb"))
     .catch(err => console.log(err))
 
-// function addProductAsync(product) {
-//     return product.save();
+function addBookAsync(book) {
+    return book.save();
 
-// }
+}
 
 function getAllBooksAsync() {
     return new Promise((res, rej) => {
-        Book.find({}, (err, books) => { //החזר את כל המוצרים = {}
+        Book.find({}, (err, books) => {
             if (err) {
                 rej(err)
                 return
@@ -23,5 +23,5 @@ function getAllBooksAsync() {
 }
 module.exports = {
 
-    getAllBooksAsync
+    getAllBooksAsync, addBookAsync
 }

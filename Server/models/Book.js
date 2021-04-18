@@ -7,13 +7,13 @@ const BookSchema = mongoose.Schema({
         minlength: 2,
         maxlength: 30
     },
-    bookDate: Number,
+    bookDate: String,
     bookPrice: Number,
     genre: String
 }, {
     versionKey: false
 })
 
-const Book = mongoose.model("Book", BookSchema, "books");
+const Book = mongoose.model("Book", BookSchema, "book");
 
 module.exports = Book;
