@@ -1,6 +1,3 @@
-# mongo-graphql
-
-
 the idea is to use a prebuilt mongo Server
 and hook into it with graphql
 
